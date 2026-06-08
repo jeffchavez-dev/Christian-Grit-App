@@ -4,15 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#0A0A0F',
-        surface: '#1A1A24',
-        surfaceAlt: '#22222E',
-        border: '#2A2A3A',
-        primary: '#6C63FF',
-        primaryDim: '#3D3880',
-        gold: '#F5A623',
-        muted: '#8888AA',
-        faint: '#555570',
+        bg: '#F5EFE6',
+        surface: '#EDE4D3',
+        surfaceAlt: '#E3D8C4',
+        border: '#C9B99A',
+        primary: '#7C5C3E',
+        primaryDim: '#A07850',
+        gold: '#B8860B',
+        muted: '#7A6251',
+        faint: '#A8947E',
+        ink: '#2C1A0E',
+      },
+      fontFamily: {
+        serif: ['Georgia', 'Cambria', 'serif'],
       },
     },
   },

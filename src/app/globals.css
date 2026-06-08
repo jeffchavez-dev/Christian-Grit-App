@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 * { box-sizing: border-box; }
-body { background: #0A0A0F; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+body {
+  background: #F5EFE6;
+  color: #2C1A0E;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #2A2A3A; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #C9B99A; border-radius: 4px; }
+
+/* Warm parchment texture feel */
+.card {
+  background: #EDE4D3;
+  border: 1px solid #C9B99A;
+  border-radius: 16px;
+}
