@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const TABS = [
-  { href: '/',           label: 'Disciplines', icon: '✝️' },
-  { href: '/statistics', label: 'Growth',      icon: '🌿' },
-  { href: '/scripture',  label: 'Scripture',   icon: '📜' },
-  { href: '/settings',   label: 'Settings',    icon: '🔧' },
+  { href: '/',                 label: 'Disciplines', icon: '✝️' },
+  { href: '/statistics',       label: 'Growth',      icon: '🌿' },
+  { href: '/scripture',        label: 'Scripture',   icon: '📜' },
+  { href: '/sermon',           label: 'Sermons',     icon: '⛪' },
+  { href: '/accountability',   label: 'Partner',     icon: '🤝' },
+  { href: '/settings',         label: 'Settings',    icon: '🔧' },
 ];
 
 export default function BottomNav() {

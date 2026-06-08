@@ -1,4 +1,5 @@
 import './globals.css';
+import NotificationSetup from '@/components/NotificationSetup';
 
 export const metadata = {
   title: 'Christian Grit',
@@ -23,10 +24,13 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Christian Grit" />
-        <link rel="apple-touch-icon" href="/icon-512.png" />
+        <link rel="apple-touch-icon" href="/icon-512.svg" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className="bg-bg min-h-screen">{children}</body>
+      <body className="bg-bg min-h-screen">
+        {children}
+        <NotificationSetup />
+      </body>
     </html>
   );
 }

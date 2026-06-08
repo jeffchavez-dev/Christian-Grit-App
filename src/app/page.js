@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { format, startOfWeek, addDays, isToday } from 'date-fns';
 import BottomNav from '@/components/BottomNav';
+import SyncButton from '@/components/SyncButton';
 import {
   getHabits, createHabit, deleteHabit,
   toggleCompletion, getStatusForDate, getStreak, getNegStreak,
@@ -179,6 +180,7 @@ export default function HabitsPage() {
           <h1 className="text-3xl font-bold text-ink font-serif">{dateLabel}</h1>
         </div>
         <div className="flex items-center gap-3">
+          <SyncButton />
           <div className="bg-surface border border-border rounded-xl px-3 py-1.5 shadow-sm">
             <span className="text-sm font-bold text-primary">{completed}</span>
             <span className="text-sm text-faint">/{habits.length}</span>
