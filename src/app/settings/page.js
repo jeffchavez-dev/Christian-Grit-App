@@ -38,10 +38,10 @@ function PickerModal({ title, options, current, onSelect, onClose }) {
       <div className="bg-bg w-full rounded-t-3xl p-6 pb-10 border-t border-border" onClick={e => e.stopPropagation()}>
         <div className="w-10 h-1 bg-border rounded-full mx-auto mb-5" />
         <h2 className="text-lg font-bold text-ink font-serif mb-4">{title}</h2>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 max-h-72 overflow-y-auto pr-1">
           {options.map(opt => (
             <button key={opt.value} onClick={() => { onSelect(opt.value); onClose(); }}
-              className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-all
+              className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-all flex-shrink-0
                 ${current === opt.value ? 'border-primary bg-amber-50' : 'border-border bg-surface hover:bg-surfaceAlt'}`}>
               <span className="text-ink text-sm font-medium">{opt.label}</span>
               {current === opt.value && <span className="text-primary font-bold">✓</span>}
@@ -138,7 +138,10 @@ export default function SettingsPage() {
         <Row icon="⏰" label="Day Starts At" subtitle="When your new day begins"
           right={<span className="text-primary text-sm font-bold">{s.dayStartsAt} ›</span>}
           onClick={() => setModal({ type: 'picker', title: 'Day Starts At', key: 'dayStartsAt',
-            options: ['03:00','04:00','05:00','06:00','07:00'].map(v => ({ label: v, value: v })) })} />
+            options: Array.from({ length: 24 }, (_, i) => {
+              const h = String(i).padStart(2, '0');
+              return { value: `${h}:00`, label: `${h}:00` };
+            }) })} />
         <Row icon="📅" label="Week Starts On"
           right={<span className="text-primary text-sm font-bold">{s.weekStartsOn ?? 'Sunday'} ›</span>}
           onClick={() => setModal({ type: 'picker', title: 'Week Starts On', key: 'weekStartsOn',
